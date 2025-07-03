@@ -1,9 +1,24 @@
 pipeline {
-    agent any
+    agent any 
     stages {
-        stage ("Build") {
+        stage ('Build') {
             steps {
-                echo "Executing multi branch pipeline from github"
+                echo "Executing Multi branch pipeline from github"
+            }
+        }
+        stage ('test') {
+            steps {
+                echo "Executing test stage"
+            }
+        }
+        stage ('deploytodev') {
+            steps {
+                echo "Executing to dev deployment stage"
+            }
+        }
+        stage ('deploytoprod') {
+            steps {
+                echo "Executing to prod deployment stage"
             }
         }
     }
