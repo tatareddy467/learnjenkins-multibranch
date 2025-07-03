@@ -6,10 +6,13 @@ pipeline {
     }
     stages {
         stage ('Build') {
+            environment {
+                cloud = "GCP"
+            }
             steps {
                 echo "Welcome ${name}"
-                echo "you enrolled to ${course} Course"
-                //echo "you are certified in GCP"
+                echo "You are enrolled to ${course} Course"
+                echo "you are certified in ${cloud}"
             }
         }
     }
