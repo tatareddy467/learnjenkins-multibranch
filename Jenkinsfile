@@ -1,6 +1,7 @@
 pipeline {
     agent any 
     environment {
+        name = "Naani"
 
     }
     stages {
