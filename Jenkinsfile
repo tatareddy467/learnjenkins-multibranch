@@ -3,6 +3,7 @@ pipeline {
     environment {
         name = "Naani"
         course = "K8S"
+        cloud = "AWS"
     }
     stages {
         stage ('Build') {
