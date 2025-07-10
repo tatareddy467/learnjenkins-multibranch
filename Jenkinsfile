@@ -1,15 +1,15 @@
 pipeline {
-    agent any 
+    agent any
     environment {
-        login = credentials('naani-user-jenkins-slave')
-        name = "Naani"
+        DEPLOY_TO = 'production'
     }
     stages {
-        stage ("Build") {
+        stage ('Deploy') {
+            when {
+                environment name: 'DEPLOY_TO', value: 'production'
+            }
             steps {
-                echo "Git hub credentials are ${login}"
-                echo "User id is ${login_USR}"
-                echo "User password is ${login_PSW}"
+                echo "Deploying"
             }
         }
     }
