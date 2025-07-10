@@ -1,27 +1,15 @@
 pipeline {
-    agent any
+    agent any 
     environment {
+        login = credentials('naani-user-jenkins-slave')
         name = "Naani"
-        course = "K8S"
-        cloud = "AWS"
     }
     stages {
-        stage ('Build') {
-            environment {
-                cloud = "GCP"
-            }
+        stage ("Build") {
             steps {
-                echo "Welcome ${name}"
-                echo "You are enrolled to ${course} Course"
-                echo "you are certified in ${cloud}"
-            }
-        }
-        stage ('Second Stage') {
-            steps {
-                echo "Welcome ${name}"
-                echo "You are enrolled to ${course} Course"
-                echo "you are certified in ${cloud}"   
-                sh "printenv"             
+                echo "Git hub credentials are ${login}"
+                echo "User id is ${login_USR}"
+                echo "User password is ${login_PSW}"
             }
         }
     }
